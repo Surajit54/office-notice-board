@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="section-title">Latest Notices</h2>
+
+<table class="notice-table">
+    <tr>
+        <th>Notice Title</th>
+        <th>Reference</th>
+        <th>Date</th>
+        {% if 'user' in session %}
+        <th>Action</th>
+        {% endif %}
+    </tr>
+
+    {% for notice in notices %}
+    <tr>
+        <td>
+            <a href="{{ url_for('view_pdf', filename=notice.name) }}" target="_blank">
+                {{ notice.name }}
+            </a>
+        </td>
+        <td>{{ notice.name }}</td>
+        <td>{{ notice.date }}</td>
+
+        {% if 'user' in session %}
+        <td>
+            <a href="{{ url_for('delete_file', filename=notice.name) }}"
+               onclick="return confirm('Delete this notice?')">
+               Delete
+            </a>
+        </td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -1,0 +1,176 @@
+body{
+    margin:0;
+    font-family:Arial;
+    background:#f5f5f5;
+}
+
+/* HEADER */
+/* HEADER */
+.topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:#f5f7fb;
+    padding:12px 40px;
+    border-bottom:3px solid #0d3b66;
+}
+
+.logo{
+    height:70px;
+}
+
+.header-center{
+    text-align:center;
+}
+
+.header-center h1{
+    margin:0;
+    color:#0d3b66;
+    font-size:28px;
+    font-weight:700;
+}
+
+.subtitle{
+    margin:0;
+    color:#555;
+    font-size:14px;
+}
+
+.login-btn{
+    background:#0d3b66;
+    color:white;
+    padding:8px 18px;
+    border-radius:4px;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.login-btn:hover{
+    background:#082a4a;
+}
+
+
+/* TABLE */
+.notice-table{
+    width:100%;
+    border-collapse:collapse;
+    background:white;
+}
+
+.notice-table th{
+    background:#e67e22;
+    color:white;
+    padding:10px;
+}
+
+.notice-table td{
+    padding:10px;
+    border-bottom:1px solid #ddd;
+}
+
+.notice-table tr:hover{
+    background:#f9f9f9;
+}
+
+/* FOOTER */
+.footer{
+    background:#b03a2e;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+/* ================= MAIN CONTENT BOX ================= */
+.content{
+    max-width:1100px;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* ================= HOME CARDS ================= */
+.cards{
+    display:flex;
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    flex:1;
+    background:#f1f6fb;
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+    font-size:18px;
+    font-weight:600;
+    color:#0d3b66;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+./* ===== HOME CARDS DESIGN ===== */
+
+.cards{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
+
+.card{
+    width:300px;
+    height:170px;
+    background:#eef3f7;
+    border-radius:12px;
+    text-align:center;
+    padding:25px;
+    text-decoration:none;
+    color:#143d66;
+    font-weight:600;
+    font-size:18px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition:all .3s ease;
+}
+
+.card p{
+    font-size:15px;
+    font-weight:normal;
+    margin-top:10px;
+    color:#2c3e50;
+}
+
+/* HOVER EFFECT */
+.card:hover{
+    background:#0d3b66;
+    color:white;
+    transform:translateY(-8px);
+    box-shadow:0 10px 25px rgba(0,0,0,0.25);
+}
+
+.card:hover p{
+    color:#e6f2ff;
+}
+/* BREAKING NEWS BAR */
+
+.breaking-bar{
+    background:#b02a2a;
+    color:white;
+    padding:8px 0;
+    display:flex;
+    align-items:center;
+    font-weight:600;
+}
+
+.breaking-bar .label{
+    background:#8b0000;
+    padding:8px 15px;
+    margin-right:10px;
+}
+
+.breaking-bar marquee{
+    flex:1;
+    font-size:15px;
+}

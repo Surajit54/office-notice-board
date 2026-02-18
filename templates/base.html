@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Government Recruitment Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div class="topbar">
+    <div class="header-left">
+        <img src="{{ url_for('static', filename='emblem.png') }}" class="logo">
+    </div>
+
+    <div class="header-center">
+        <h1>Government Recruitment Portal</h1>
+        <p class="subtitle">Government of West Bengal</p>
+    </div>
+
+    <div class="header-right">
+        {% if session.get('user') %}
+            <a href="/logout" class="login-btn">Logout</a>
+        {% else %}
+            <a href="/login" class="login-btn">Staff Login</a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/notices">Latest Notices</a>
+    <a href="#">Results</a>
+    <a href="#">Archive</a>
+</div>
+<!-- BREAKING NEWS -->
+<<!-- BREAKING NEWS -->
+<div class="breaking-bar">
+    <span class="label">Latest Updates :</span>
+
+    <marquee behavior="scroll" direction="left" scrollamount="6">
+
+        {% if latest_notices %}
+            {% for n in latest_notices %}
+                <a href="{{ url_for('view_pdf', filename=n) }}" style="color:white; text-decoration:none;">
+                    {{ n }}
+                </a>
+                &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+            {% endfor %}
+        {% else %}
+            No notices uploaded yet
+        {% endif %}
+
+    </marquee>
+</div>
+
+
+<!-- MAIN CONTENT (VERY IMPORTANT) -->
+<div class="main-content">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    © 2026 Government Recruitment Portal
+</div>
+
+</body>
+</html>
