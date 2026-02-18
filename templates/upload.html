@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2 class="page-title">Upload Notices</h2>
+
+<form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+    <input type="file" name="pdf_files" multiple required>
+    <br><br>
+    <button class="btn upload">Upload</button>
+</form>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Staff Login (Mobile OTP)</h2>
+
+<form method="post">
+    <label>Mobile Number</label>
+    <input type="text" name="mobile" maxlength="10" required>
+
+    <br><br>
+    <button type="submit">Send OTP</button>
+</form>
+
+{% endblock %}
