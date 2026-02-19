@@ -1,39 +1,29 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="hero">
+    <h2>Latest Recruitment Notices</h2>
+</div>
 
-<h2 class="section-title">Latest Notices</h2>
-
-<table class="notice-table">
-    <tr>
-        <th>Notice Title</th>
-        <th>Reference</th>
-        <th>Date</th>
-        {% if 'user' in session %}
-        <th>Action</th>
-        {% endif %}
-    </tr>
-
+<div class="grid">
     {% for notice in notices %}
-    <tr>
-        <td>
-            <a href="{{ url_for('view_pdf', filename=notice.name) }}" target="_blank">
-                {{ notice.name }}
-            </a>
-        </td>
-        <td>{{ notice.name }}</td>
-        <td>{{ notice.date }}</td>
+    <div class="card notice-card">
+        <div class="notice-header">
+            <div class="pdf-icon">📄</div>
+            <h3>{{ notice.title }}</h3>
+        </div>
 
-        {% if 'user' in session %}
-        <td>
-            <a href="{{ url_for('delete_file', filename=notice.name) }}"
-               onclick="return confirm('Delete this notice?')">
-               Delete
-            </a>
-        </td>
-        {% endif %}
-    </tr>
+        <p class="notice-date">
+            Uploaded on: {{ notice.upload_date.strftime('%d %b %Y') }}
+        </p>
+
+        <a href="{{ url_for('static', filename='uploads/' + notice.filename) }}" 
+           class="btn download-btn" 
+           target="_blank">
+           Download PDF
+        </a>
+    </div>
     {% endfor %}
-</table>
+</div>
 
 {% endblock %}
